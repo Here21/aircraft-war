@@ -43,6 +43,6 @@ cc.Class({
     },
     onHandleDestroy: function () {
         // Demo中零时使用，后续要使用对象池，参考bullet
-        this.node.destroy();
+        this.enemyGroup.destroyEnemy(this.node);
     }
 });
