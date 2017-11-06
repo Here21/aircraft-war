@@ -1,0 +1,43 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "enemy1_exploding",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.5166666666666667,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "1803d813-d2e9-466c-ad73-cdc4ebad6706"
+            }
+          },
+          {
+            "frame": 0.16666666666666666,
+            "value": {
+              "__uuid__": "b8571be6-e39f-4f7e-b1b8-7dbeb99375de"
+            }
+          },
+          {
+            "frame": 0.3333333333333333,
+            "value": {
+              "__uuid__": "89fd0785-cc31-4e99-81e4-b4891a51a326"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "1331e6d3-22ac-4f10-959b-40721f06a59d"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}
