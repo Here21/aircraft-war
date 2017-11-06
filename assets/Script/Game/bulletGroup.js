@@ -31,6 +31,7 @@ const finiteBullet = cc.Class({
     name: 'finiteBullet',
     properties: {
         duration: 0,
+        ufoBulletName: ''
     }
 });
 
@@ -89,6 +90,22 @@ cc.Class({
         let newV2_x = heroP.x + eval(positionStr);
         let newV2_y = heroP.y;
         return cc.p(newV2_x, newV2_y);
+    },
+    // 更换子弹
+    changeBullet: function (ufoBulletName) {
+        this.unschedule(this.startShoot);
+        for (let i = 0; i < this.finiteBullet.length; i++) {
+            if (this.finiteBullet[i].ufoBulletName === ufoBulletName) {
+                let startDoubleShoot = function (i) {
+                    this.genNewBullet(this.finiteBullet[i])
+                }.bind(this, i);
+                // 设置一个延时，当一个定时器走完之后，另一个延时结束，开始执行
+                this.schedule(startDoubleShoot, this.finiteBullet[i].rate, this.finiteBullet[i].duration);
+                let delay = this.finiteBullet[i].rate * this.finiteBullet[i].duration;
+                this.schedule(this.startShoot, this.infiniteBullet.rate, cc.macro.REPEAT_FOREVER, delay);
+            }
+        }
+
     },
     //销毁子弹
     destroyBullet: function (node) {
