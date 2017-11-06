@@ -170,7 +170,10 @@
     "_enabled": true,
     "HP": 1,
     "speedMax": 200,
-    "speedMin": 100
+    "speedMin": 100,
+    "initSpriteFrame": {
+      "__uuid__": "8dc1f52f-7d59-4d4d-8230-dc88f1215145"
+    }
   },
   {
     "__type__": "cc.PrefabInfo",

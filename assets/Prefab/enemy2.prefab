@@ -164,7 +164,10 @@
     "_enabled": true,
     "HP": 5,
     "speedMax": 150,
-    "speedMin": 100
+    "speedMin": 100,
+    "initSpriteFrame": {
+      "__uuid__": "c01ad25e-56c2-4392-880d-29f66b2b3a19"
+    }
   },
   {
     "__type__": "cc.Animation",

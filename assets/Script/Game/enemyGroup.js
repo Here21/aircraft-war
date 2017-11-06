@@ -42,6 +42,8 @@ cc.Class({
         let pos = this.getNewEnemyPosition(newNode);
         newNode.setPosition(pos);
         newNode.getComponent('enemy').enemyGroup = this;
+        // 初始化敌机状态
+        newNode.getComponent('enemy').enemyInit();
     },
     //敌机随机生成的位置
     getNewEnemyPosition: function(newEnemy) {
