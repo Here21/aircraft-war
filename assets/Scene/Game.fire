@@ -779,7 +779,8 @@
       {
         "__uuid__": "390a9c0d-dcd2-4a38-98f5-8694518881f1"
       }
-    ]
+    ],
+    "hero": null
   },
   {
     "__type__": "cc.Label",
@@ -969,7 +970,7 @@
     "_localZOrder": 0,
     "_globalZOrder": 0,
     "_opacityModifyRGB": false,
-    "groupIndex": 0
+    "groupIndex": 3
   },
   {
     "__type__": "cc.Sprite",
@@ -1013,6 +1014,9 @@
     "_clips": [
       {
         "__uuid__": "95510981-9a61-48f1-819b-19de062d6f6d"
+      },
+      {
+        "__uuid__": "e7a26c63-bc20-4728-88a2-22ebc9cf9077"
       }
     ],
     "playOnLoad": true
@@ -1104,7 +1108,7 @@
   {
     "__type__": "infiniteBullet",
     "name": "infiniteBullet",
-    "rate": 0.3,
+    "rate": 0.1,
     "poolAmount": 10,
     "prefab": {
       "__uuid__": "87d1c992-4928-4d54-adad-6f75b226c8c1"
@@ -1291,8 +1295,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 0,
-      "height": 0
+      "width": 750,
+      "height": 1334
     },
     "_rotationX": 0,
     "_rotationY": 0,

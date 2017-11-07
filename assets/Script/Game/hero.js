@@ -11,13 +11,20 @@ cc.Class({
     // use this for initialization
     onLoad: function () {
         // 监听拖动事件
-        this.node.on('touchmove', this.onHandleHeroMove, this);
+        this.onDrag();
         // 获取碰撞检测系统
         let manager = cc.director.getCollisionManager();
         // 开启碰撞检测系统
         manager.enabled = true;
     },
-
+    // 添加拖动监听
+    onDrag: function () {
+        this.node.on('touchmove', this.onHandleHeroMove, this);
+    },
+    // 去掉拖动监听
+    offDrag: function(){
+        this.node.off('touchmove', this.onHandleHeroMove, this);
+    },
     // Hero拖动
     onHandleHeroMove: function (event) {
         // touchmove事件中 event.getLocation() 获取当前已左下角为锚点的触点位置（world point）
@@ -32,6 +39,19 @@ cc.Class({
         if (other.node.name === 'doubleBullet') {
             this.bulletGroup.changeBullet(other.node.name);
         }
+        if (other.node.group === 'enemy') {
+            let anim = this.getComponent(cc.Animation);
+            let animName = this.node.name + '_exploding';
+            anim.play(animName);
+            anim.on('finished', this.onHandleDestroy, this);
+        }
+    },
+    onHandleDestroy: function () {
+        // this.node.destroy();
+        // 暂停正在运行的场景，该暂停只会停止游戏逻辑执行，但是不会停止渲染和 UI 响应
+        this.offDrag();
+        // this.pause();
+        cc.director.pause();
     }
 
     // called every frame, uncomment this function to activate update callback
