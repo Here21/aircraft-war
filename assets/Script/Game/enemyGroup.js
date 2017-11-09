@@ -6,7 +6,7 @@ const enemyG = cc.Class({
         freq: 0,
         poolAmount: 0
     }
-})
+});
 
 cc.Class({
     extends: cc.Component,
@@ -21,7 +21,6 @@ cc.Class({
     // use this for initialization
     onLoad: function () {
         D.common.batchInitNodePool(this, this.enemyGroup);
-        this.startAction();
     },
     // 敌机出动
     startAction: function () {
@@ -48,8 +47,8 @@ cc.Class({
     //敌机随机生成的位置
     getNewEnemyPosition: function(newEnemy) {
         //位于上方，先不可见
-        var randx = cc.randomMinus1To1() * (this.node.parent.width / 2 - newEnemy.width / 2);
-        var randy = this.node.parent.height / 2 + newEnemy.height / 2;
+        let randx = cc.randomMinus1To1() * (this.node.parent.width / 2 - newEnemy.width / 2);
+        let randy = this.node.parent.height / 2 + newEnemy.height / 2;
         return cc.v2(randx,randy);
     },
     // 销毁

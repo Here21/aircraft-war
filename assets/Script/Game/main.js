@@ -17,11 +17,16 @@ cc.Class({
             default: null,
             type: require('hero')
         },
+        bulletGroup: require('bulletGroup'),
+        enemyGroup: require('enemyGroup'),
+        ufoGroup: require('ufoGroup'),
     },
 
     // use this for initialization
     onLoad: function () {
-
+        this.enemyGroup.startAction();
+        this.bulletGroup.startAction();
+        this.ufoGroup.startAction();
     },
     // 暂停
     handlePause: function () {
@@ -33,7 +38,7 @@ cc.Class({
             cc.director.resume();
             // 添加Hero拖拽监听
             this.hero.onDrag();
-            return pause = !pause
+            return pause = !pause;
         }
         this.pause.normalSprite = this.pauseSprite[2];
         this.pause.pressedSprite = this.pauseSprite[3];
@@ -44,7 +49,14 @@ cc.Class({
         this.hero.offDrag();
         return pause = !pause;
     },
-
+    // 使用tnt炸弹
+    useBomb: function () {
+        // 把当前的node.children 赋值给一个新的对象
+        let enemy = new Array(...this.enemyGroup.node.children);
+        for(let i = 0; i < enemy.length; i++) {
+            enemy[i].getComponent('enemy').explodingAnim();
+        }
+    }
 
     // called every frame, uncomment this function to activate update callback
     // update: function (dt) {

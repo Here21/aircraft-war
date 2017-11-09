@@ -40,22 +40,25 @@ cc.Class({
         }
         if (this.enemyHp === 0) {
             this.enemyHp--;
-            let anim = this.getComponent(cc.Animation);
-            let animName = this.node.name + '_exploding';
-            anim.play(animName);
-            anim.on('finished',  this.onHandleDestroy, this);
+            this.explodingAnim();
             return;
         }
         if (this.enemyHp > 0) {
             this.enemyHp--;
         }
     },
+    explodingAnim: function () {
+        let anim = this.getComponent(cc.Animation);
+        let animName = this.node.name + '_exploding';
+        anim.play(animName);
+        anim.on('finished',  this.onHandleDestroy, this);
+    },
 
     // called every frame, uncomment this function to activate update callback
     update: function (dt) {
         this.node.y -= dt * this.speed;
         //出屏幕后 回收节点
-        if (this.node.y < -this.node.parent.height){
+        if (this.node.y < -this.node.parent.height / 2){
             this.enemyGroup.destroyEnemy(this.node);
         }
     },
