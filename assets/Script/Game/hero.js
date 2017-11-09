@@ -1,12 +1,16 @@
 cc.Class({
     extends: cc.Component,
 
-    properties: {
+    properties: () => ({
         bulletGroup: {
             default: null,
             type: require('bulletGroup'),
-        }
-    },
+        },
+        mainScript: {
+            default: null,
+            type: require('main'),
+        },
+    }),
 
     // use this for initialization
     onLoad: function () {
@@ -36,10 +40,16 @@ cc.Class({
     
     // 碰撞组件
     onCollisionEnter: function (other, self) {
-        if (other.node.name === 'doubleBullet') {
-            this.bulletGroup.changeBullet(other.node.name);
-        }
-        if (other.node.group === 'enemy') {
+        if (other.node.group === 'ufo'){
+            switch (other.node.name) {
+                case 'doubleBullet':
+                    this.bulletGroup.changeBullet(other.node.name);
+                    break;
+                case 'tnt':
+                    this.mainScript.receiveBomb();
+                    break;
+            }
+        } else if (other.node.group === 'enemy'){
             let anim = this.getComponent(cc.Animation);
             let animName = this.node.name + '_exploding';
             anim.play(animName);
