@@ -10,11 +10,14 @@ const enemyG = cc.Class({
 
 cc.Class({
     extends: cc.Component,
-
     properties: {
         enemyGroup: {
             default: [],
-            type: enemyG
+            type: enemyG,
+        },
+        mainScript: {
+            default: null,
+            type: require('main'),
         }
     },
 
@@ -52,8 +55,9 @@ cc.Class({
         return cc.v2(randx,randy);
     },
     // 销毁
-    destroyEnemy: function (node) {
+    destroyEnemy: function (node, score = 0) {
         D.common.putBackPool(this, node);
+        score && this.mainScript.changeScore(score);
     }
 
     // called every frame, uncomment this function to activate update callback

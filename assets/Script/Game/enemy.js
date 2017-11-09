@@ -2,6 +2,11 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
+        score: {
+            default: 0,
+            type: cc.Integer,
+            tooltip: '敌机分数',
+        },
         HP: {
             default: 0,
             type: cc.Integer,
@@ -53,7 +58,6 @@ cc.Class({
         anim.play(animName);
         anim.on('finished',  this.onHandleDestroy, this);
     },
-
     // called every frame, uncomment this function to activate update callback
     update: function (dt) {
         this.node.y -= dt * this.speed;
@@ -64,6 +68,6 @@ cc.Class({
     },
     onHandleDestroy: function () {
         // Demo中零时使用，后续要使用对象池，参考bullet
-        this.enemyGroup.destroyEnemy(this.node);
+        this.enemyGroup.destroyEnemy(this.node, this.score);
     }
 });

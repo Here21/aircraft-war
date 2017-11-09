@@ -168,6 +168,7 @@
       "__id__": 1
     },
     "_enabled": true,
+    "score": 5,
     "HP": 1,
     "speedMax": 200,
     "speedMin": 100,

@@ -38,6 +38,8 @@ cc.Class({
     initState: function () {
         D.commonState.pauseState = false;
         D.commonState.bombAmount = 0;
+        D.commonState.gameScore = 0;
+
     },
     // 暂停
     handlePause: function () {
@@ -76,6 +78,11 @@ cc.Class({
     receiveBomb: function () {
         D.commonState.bombAmount++;
         this.bombAmount.string = String(D.commonState.bombAmount);
+    },
+    // 分数
+    changeScore: function (score) {
+        D.commonState.gameScore += score;
+        this.scoreDisplay.string = D.commonState.gameScore.toString();
     }
 
     // called every frame, uncomment this function to activate update callback
