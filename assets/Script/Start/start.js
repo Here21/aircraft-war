@@ -9,6 +9,10 @@ cc.Class({
         startButton: {
             default: null,
             type: cc.Button
+        },
+        buttonSound: {
+            default: null,
+            url: cc.AudioClip
         }
     },
 
@@ -20,6 +24,7 @@ cc.Class({
     },
 
     startGame: function () {
+        cc.audioEngine.play(this.buttonSound);
         // 转场
         cc.director.loadScene('Game');
     }

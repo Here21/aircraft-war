@@ -18,7 +18,11 @@ cc.Class({
             default: null,
             type: cc.SpriteFrame,
             tooltip: '初始化图像'
-        }
+        },
+        explosionSound: {
+            default: null,
+            url: cc.AudioClip
+        },
     },
 
     // use this for initialization
@@ -53,6 +57,8 @@ cc.Class({
         }
     },
     explodingAnim: function () {
+        // 播放爆炸音效
+        cc.audioEngine.play(this.explosionSound);
         let anim = this.getComponent(cc.Animation);
         let animName = this.node.name + '_exploding';
         anim.play(animName);

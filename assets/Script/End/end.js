@@ -17,6 +17,10 @@ cc.Class({
         quitBtn: {
             default: null,
             type: cc.Button,
+        },
+        buttonSound: {
+            default: null,
+            url: cc.AudioClip
         }
     },
 
@@ -25,9 +29,11 @@ cc.Class({
         this.newScore.string = D.commonState.gameScore ? D.commonState.gameScore.toString() : '0';
     },
     restartGame: function () {
+        cc.audioEngine.play(this.buttonSound);
         cc.director.loadScene('Game');
     },
     quitGame: function () {
+        cc.audioEngine.play(this.buttonSound);
         cc.director.loadScene('Start');
     },
 

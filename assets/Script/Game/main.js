@@ -26,6 +26,22 @@ cc.Class({
             default: null,
             type:require('ufoGroup')
         },
+        bgm: {
+            default: null,
+            url: cc.AudioClip
+        },
+        gameOverSound: {
+            default: null,
+            url: cc.AudioClip
+        },
+        bombSound: {
+            default: null,
+            url: cc.AudioClip
+        },
+        buttonSound: {
+            default: null,
+            url: cc.AudioClip
+        }
     }),
 
     // use this for initialization
@@ -34,15 +50,17 @@ cc.Class({
         this.enemyGroup.startAction();
         this.bulletGroup.startAction();
         this.ufoGroup.startAction();
+        // play bgm
+        cc.audioEngine.play(this.bgm, true);
     },
     initState: function () {
         D.commonState.pauseState = false;
         D.commonState.bombAmount = 0;
         D.commonState.gameScore = 0;
-
     },
     // 暂停
     handlePause: function () {
+        cc.audioEngine.play(this.buttonSound);
         if (D.commonState.pauseState) {
             this.pause.normalSprite = this.pauseSprite[0];
             this.pause.pressedSprite = this.pauseSprite[1];
@@ -65,6 +83,8 @@ cc.Class({
     // 使用tnt炸弹
     useBomb: function () {
         if (D.commonState.bombAmount > 0) {
+            // 音效
+            cc.audioEngine.play(this.bombSound);
             // 把当前的node.children 赋值给一个新的对象
             let enemy = new Array(...this.enemyGroup.node.children);
             for(let i = 0; i < enemy.length; i++) {
@@ -86,6 +106,7 @@ cc.Class({
     },
     // 游戏结束
     gameOver: function () {
+        cc.audioEngine.play(this.gameOverSound);
         cc.director.loadScene('End');
     },
 

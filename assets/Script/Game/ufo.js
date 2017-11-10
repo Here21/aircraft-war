@@ -4,6 +4,10 @@ cc.Class({
     properties: {
         speedMax: 0,
         speedMin: 0,
+        getUfoSound: {
+            default: null,
+            url: cc.AudioClip
+        }
     },
 
     // use this for initialization
@@ -16,6 +20,7 @@ cc.Class({
     },
     //碰撞检测
     onCollisionEnter: function(other, self){
+        cc.audioEngine.play(this.getUfoSound);
         this.ufoGroup.destroyUfo(this.node);
     },
     // called every frame, uncomment this function to activate update callback

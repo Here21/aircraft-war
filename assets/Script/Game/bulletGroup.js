@@ -52,6 +52,10 @@ cc.Class({
             tooltip: '有限子弹'
         },
         hero: cc.Node,
+        bulletSound: {
+            default: null,
+            url: cc.AudioClip,
+        }
     }),
 
     onLoad: function () {
@@ -63,6 +67,7 @@ cc.Class({
     startAction: function () {
         this.startShoot = function () {
             this.genNewBullet(this.infiniteBullet);
+            cc.audioEngine.play(this.bulletSound);
         }.bind(this);
         // 定时器 发射子弹的就是创建子弹对象
         this.schedule(this.startShoot, this.infiniteBullet.rate);
@@ -96,7 +101,8 @@ cc.Class({
         for (let i = 0; i < this.finiteBullet.length; i++) {
             if (this.finiteBullet[i].ufoBulletName === ufoBulletName) {
                 let startDoubleShoot = function (i) {
-                    this.genNewBullet(this.finiteBullet[i])
+                    this.genNewBullet(this.finiteBullet[i]);
+                    cc.audioEngine.play(this.bulletSound);
                 }.bind(this, i);
                 // 设置一个延时，当一个定时器走完之后，另一个延时结束，开始执行
                 this.schedule(startDoubleShoot, this.finiteBullet[i].rate, this.finiteBullet[i].duration);

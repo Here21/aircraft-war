@@ -478,6 +478,9 @@
     },
     "quitBtn": {
       "__id__": 21
+    },
+    "buttonSound": {
+      "__uuid__": "d59f69dd-03ea-46ee-a2a4-9c6b322147fa"
     }
   },
   {

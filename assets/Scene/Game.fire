@@ -69,7 +69,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 46
+        "__id__": 47
       }
     ],
     "_prefab": null,
@@ -191,23 +191,23 @@
         "__id__": 24
       },
       {
-        "__id__": 29
+        "__id__": 30
       },
       {
-        "__id__": 36
+        "__id__": 37
       },
       {
-        "__id__": 41
+        "__id__": 42
       }
     ],
     "_tag": -1,
     "_active": true,
     "_components": [
       {
-        "__id__": 44
+        "__id__": 45
       },
       {
-        "__id__": 45
+        "__id__": 46
       }
     ],
     "_prefab": null,
@@ -590,13 +590,25 @@
       "__id__": 23
     },
     "bulletGroup": {
-      "__id__": 28
+      "__id__": 29
     },
     "enemyGroup": {
-      "__id__": 35
+      "__id__": 36
     },
     "ufoGroup": {
-      "__id__": 40
+      "__id__": 41
+    },
+    "bgm": {
+      "__uuid__": "689e6eae-521e-496b-a25a-7e72cc6d5a52"
+    },
+    "gameOverSound": {
+      "__uuid__": "fcb43b7d-d415-4d14-b900-c2253d200d47"
+    },
+    "bombSound": {
+      "__uuid__": "505633b6-748a-44d6-a069-fca67e259eb9"
+    },
+    "buttonSound": {
+      "__uuid__": "d59f69dd-03ea-46ee-a2a4-9c6b322147fa"
     }
   },
   {
@@ -894,7 +906,7 @@
     },
     "_enabled": true,
     "bulletGroup": {
-      "__id__": 28
+      "__id__": 29
     },
     "mainScript": {
       "__id__": 14
@@ -922,6 +934,9 @@
       },
       {
         "__id__": 27
+      },
+      {
+        "__id__": 28
       }
     ],
     "_prefab": null,
@@ -1123,23 +1138,40 @@
     ]
   },
   {
+    "__type__": "cc.AudioSource",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 24
+    },
+    "_enabled": true,
+    "_volume": 1,
+    "_mute": false,
+    "_loop": false,
+    "playOnLoad": false,
+    "preload": false
+  },
+  {
     "__type__": "3807dSPT35G8ZA8afVANPPV",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 29
+      "__id__": 30
     },
     "_enabled": true,
     "infiniteBullet": {
-      "__id__": 30
+      "__id__": 31
     },
     "finiteBullet": [
       {
-        "__id__": 32
+        "__id__": 33
       }
     ],
     "hero": {
       "__id__": 24
+    },
+    "bulletSound": {
+      "__uuid__": "e8428465-8772-429a-938e-f67c4f25fc33"
     }
   },
   {
@@ -1154,7 +1186,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 28
+        "__id__": 29
       }
     ],
     "_prefab": null,
@@ -1204,7 +1236,7 @@
     },
     "position": [
       {
-        "__id__": 31
+        "__id__": 32
       }
     ]
   },
@@ -1222,10 +1254,10 @@
     },
     "position": [
       {
-        "__id__": 33
+        "__id__": 34
       },
       {
-        "__id__": 34
+        "__id__": 35
       }
     ],
     "duration": 90,
@@ -1244,18 +1276,18 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 36
+      "__id__": 37
     },
     "_enabled": true,
     "enemyGroup": [
-      {
-        "__id__": 37
-      },
       {
         "__id__": 38
       },
       {
         "__id__": 39
+      },
+      {
+        "__id__": 40
       }
     ],
     "mainScript": {
@@ -1274,7 +1306,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 35
+        "__id__": 36
       }
     ],
     "_prefab": null,
@@ -1346,15 +1378,15 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 41
+      "__id__": 42
     },
     "_enabled": true,
     "ufoG": [
       {
-        "__id__": 42
+        "__id__": 43
       },
       {
-        "__id__": 43
+        "__id__": 44
       }
     ]
   },
@@ -1370,7 +1402,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 40
+        "__id__": 41
       }
     ],
     "_prefab": null,

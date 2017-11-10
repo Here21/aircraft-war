@@ -123,7 +123,10 @@
     },
     "_enabled": true,
     "speedMax": 100,
-    "speedMin": 50
+    "speedMin": 50,
+    "getUfoSound": {
+      "__uuid__": "98dfafac-8217-41d0-98a1-383e39fd8baa"
+    }
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -131,7 +134,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "77e7d1b5-05a0-4ec2-8ab1-7db6e8127ee6"
     },
     "fileId": "16HlBSYkJLE7AfLXaNEzL1",
     "sync": false

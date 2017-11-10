@@ -168,6 +168,9 @@
     "speedMin": 100,
     "initSpriteFrame": {
       "__uuid__": "c01ad25e-56c2-4392-880d-29f66b2b3a19"
+    },
+    "explosionSound": {
+      "__uuid__": "ea17de7d-e42b-43e2-83da-01eae170a6cf"
     }
   },
   {
