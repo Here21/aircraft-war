@@ -1,3 +1,5 @@
+// const _ = require('lodash');
+
 cc.Class({
     extends: cc.Component,
 
@@ -8,6 +10,7 @@ cc.Class({
     // use this for initialization
     onLoad: function () {
         D.common = this;
+        D.commonState.poolObj = {};
     },
     // 批处理对象池
     batchInitNodePool: function (that, objArray) {
@@ -21,6 +24,8 @@ cc.Class({
         let name = objInfo.name;
         let poolName = name + 'Pool';
         that[poolName] = new cc.NodePool();
+        // 在commonState中备份，方便clear
+        D.commonState.poolObj[poolName] = that[poolName];
         // 创建对象，并放入池中
         for (let i = 0; i < objInfo.poolAmount; i++) {
             let newNode = cc.instantiate(objInfo.prefab);
@@ -44,6 +49,13 @@ cc.Class({
     putBackPool: function (that, node) {
         let poolName = node.name + "Pool";
         that[poolName].put(node);
+    },
+    
+    // 清空缓冲池
+    clearAllPool: function () {
+        _.forEach(D.commonState.poolObj, function (pool) {
+            pool.clear();
+        })
     }
 
     // called every frame, uncomment this function to activate update callback

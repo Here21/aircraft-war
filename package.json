@@ -1,0 +1,12 @@
+{
+  "name": "aircraft-war",
+  "version": "1.0.0",
+  "description": "cocos creator game aircraft war",
+  "main": "index.js",
+  "repository": "https://github.com/Here21/aircraft-war",
+  "author": "Martin",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
+}

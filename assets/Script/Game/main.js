@@ -106,6 +106,7 @@ cc.Class({
     },
     // 游戏结束
     gameOver: function () {
+        D.common.clearAllPool();
         cc.audioEngine.play(this.gameOverSound);
         cc.director.loadScene('End');
     },
