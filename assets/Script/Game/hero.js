@@ -57,11 +57,10 @@ cc.Class({
         }
     },
     onHandleDestroy: function () {
-        // this.node.destroy();
         // 暂停正在运行的场景，该暂停只会停止游戏逻辑执行，但是不会停止渲染和 UI 响应
         this.offDrag();
-        // this.pause();
-        cc.director.pause();
+        // 游戏结束转场
+        this.mainScript.gameOver();
     }
 
     // called every frame, uncomment this function to activate update callback

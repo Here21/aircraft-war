@@ -83,7 +83,11 @@ cc.Class({
     changeScore: function (score) {
         D.commonState.gameScore += score;
         this.scoreDisplay.string = D.commonState.gameScore.toString();
-    }
+    },
+    // 游戏结束
+    gameOver: function () {
+        cc.director.loadScene('End');
+    },
 
     // called every frame, uncomment this function to activate update callback
     // update: function (dt) {

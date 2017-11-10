@@ -20,7 +20,7 @@ cc.Class({
     },
 
     startGame: function () {
-        console.log('game start')
+        // 转场
         cc.director.loadScene('Game');
     }
 
